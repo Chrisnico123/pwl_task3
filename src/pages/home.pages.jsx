@@ -2,7 +2,7 @@ import BerandaComponents from "../components/beranda.components";
 
 const Home = () => {
   return (
-    <div>
+    <div mt-20 mb-20>
       <BerandaComponents />;
     </div>
   );

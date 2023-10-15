@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Card, CardHeader, CardBody, CardFooter, Typography, Button } from "@material-tailwind/react";
+import { Card, CardHeader, CardBody, Typography } from "@material-tailwind/react";
 import env from "react-dotenv";
 
 const BerandaComponents = () => {
@@ -15,6 +15,7 @@ const BerandaComponents = () => {
         },
       })
       .then((result) => {
+        console.log(result.data.results);
         setMovies(result.data.results);
       });
   }, []);
@@ -40,11 +41,6 @@ const BerandaComponents = () => {
                   {product.overview}
                 </Typography>
               </CardBody>
-              <CardFooter className="pt-0">
-                <Button ripple={false} fullWidth={true} className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100">
-                  Add to Cart
-                </Button>
-              </CardFooter>
             </Card>
           ))}
         </div>
